@@ -1,0 +1,53 @@
+.bodyDog {
+  background-image: url('../../images/Ver\ Black.jpg');
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+
+
+.dogdetail{
+  background-color: white;
+  width: 1000px;
+  height: 450px;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  line-height: 1.5;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.185);
+}
+
+
+.dogdetail img {
+  /* width: 250px;
+  height: 400px;
+  margin-right: 200px;
+  object-fit: cover;
+  object-position: center; */
+  background-position: center; 
+  border-radius: 5px;
+  background-size:cover;
+  width: 450px;
+  height: 300px;
+}
+
+.linkDet{
+  text-decoration: none;
+    text-align: center;
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    background-color: white;
+    width: 45px;
+    height: 45px;
+    display: grid;
+    place-items: center;
+    font-size: 1.7rem;
+    color: #2E4052;
+    border-radius: 50%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.164);
+    cursor: pointer;
+}
