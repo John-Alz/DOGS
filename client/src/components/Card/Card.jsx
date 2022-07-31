@@ -6,9 +6,9 @@ export default function Card(props) {
         <div className={styles.Card}>
                 <img className={styles.img} src={props.image} alt="Dog" />
                 <h3>{props.name}</h3>
-                <h4>Temperamentos:</h4>
+                <h4>Temperaments:</h4>
                 <p>{props.temperament}</p>
-                <h4>Peso: {props.weight} KG</h4>
+                <h4>Weight: {props.weight} Pounds</h4>
         </div>
     )
 }

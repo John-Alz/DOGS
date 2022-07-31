@@ -1,4 +1,4 @@
-.container-pag {
+.container_pag {
     margin-top: 25px;
     width: 320px;
     margin: 10px 30px 10px 490px;
@@ -6,7 +6,7 @@
     align-items: center;
     justify-content: center;
     gap: 15px;
-    background-color: #d2d4c8;
+    background-color: #b0bea9;
     border-radius: 5px;
 }
 

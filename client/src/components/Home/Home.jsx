@@ -28,6 +28,7 @@ export default function Home() {
 
     function handleTemp(e) {
         dispatch(filterByTemperament(e.target.value))
+        setPagina(1)
     }
 
     function handleCreated(e) {
@@ -61,10 +62,10 @@ export default function Home() {
             </div>
         </div>
         <div className={styles.container_filters}>
-        <h3>Filtros</h3>
+        <h3>🐶-Filters-🦴</h3> 
         <select className={styles.Filter_name} onChange={e => orderNameHandler(e)}>
-                <option value="asc">Ascendente</option>
-                <option value="desc">Descendente</option>
+                <option value="asc">Ascending</option>
+                <option value="desc">Descending</option>
             </select>
         {/* ----------------------------------------------------- */}
             <select className={styles.Filter_creado} onChange={e => handleCreated(e)}>
@@ -74,8 +75,11 @@ export default function Home() {
             </select>
         {/* ----------------------------------------------------- */}
             <select className={styles.Filter_weight} onChange={e => orderWeightHandler(e)}>
-            <option value='min-weight'> Min-weight</option>
-            <option value='max-weight'> Max-weight</option>
+            <option disabled selected defaultValue>
+                Filter by weight
+            </option>
+            <option value="max_weight">Max</option>
+            <option value="min_weight">Min</option>
         </select>
         {/* ----------------------------------------------------- */}
         <select className={styles.Filter_temp} onChange={e => handleTemp(e)}>
@@ -89,7 +93,7 @@ export default function Home() {
             </div>
             
         {/* ----------------------------------------------------- */}
-        <div className="Cards">
+        <div>
             {estadoDogs.length > 0 ? estadoDogs
             .slice(
                 (pagina - 1) * porPagina,
@@ -108,7 +112,9 @@ export default function Home() {
                     />
                     </Link>
                 )
-            ) : <h2>Caragando...</h2>
+            ) : <div className={styles.imagen}>
+                <img src="https://sezeromer.com/wp-content/uploads/2019/09/Infinity-1s-200px.gif" alt="img" />
+            </div> 
             }
         </div>
         <Paginado pagina={pagina} setPagina={setPagina} maximo={maximo}/>

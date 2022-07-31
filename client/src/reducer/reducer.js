@@ -80,7 +80,7 @@ export default function rootReducer(state = initialState, action) {
             }
         
             case CASES.BY_ORDER_WEIGHT:
-                const orderWeight = action.payload === 'min-weight' ?
+                const orderWeight = action.payload === 'min_weight' ?
                 state.dogs.sort(function(a, b){
                     if(parseInt(a.weight[1]) > parseInt(b.weight[1])){
                         return 1

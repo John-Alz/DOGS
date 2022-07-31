@@ -48,10 +48,10 @@ export default function DogId({props}) {
         <h4>Height:</h4>
         <p>{` ${heightDog} IN`}</p>
         <h4>Weight:</h4>
-        <p>{`${weightDog} KG`}</p>
+        <p>{`${weightDog} Pounds`}</p>
         <h4>Life span:</h4>
         <p>{lifeSpanDog}</p>
-        <h4>Temperamentos:</h4>
+        <h4>Temperaments:</h4>
         <p>{temperamentDog}</p>
        </div>
     </div>

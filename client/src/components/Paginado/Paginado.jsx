@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './Paginado.css'
+import styles from './Paginado.module.css'
 
 export default function Paginado({pagina, setPagina, maximo}) {
 
@@ -37,17 +37,17 @@ export default function Paginado({pagina, setPagina, maximo}) {
 
 
   return (
-    <div className='container-pag'>
-        <button className='button' disabled={pagina === 1 || pagina < 1} onClick={previousPage}>←</button>
+    <div className={styles.container_pag}>
+        <button className={styles.button} disabled={pagina === 1 || pagina < 1} onClick={previousPage}>←</button>
         <input 
-            className='input'
+            className={styles.input}
             onChange={(e) => onChange(e)} 
             onKeyDown={(e) => onKeyDown(e)} 
             name='page' 
             autoComplete='off' 
             value={input} />
         <h5>DE {Math.ceil(maximo)}</h5>
-        <button className='button' disabled={pagina === Math.ceil(maximo) || pagina > Math.ceil(maximo)} onClick={nextPage}>→</button>
+        <button className={styles.button} disabled={pagina === Math.ceil(maximo) || pagina > Math.ceil(maximo)} onClick={nextPage}>→</button>
     </div>
   )
 }

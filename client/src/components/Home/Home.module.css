@@ -1,12 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,800');
-
-
 .bodyPage{
-    background-image: url('../../images/Clouds.jpg');
-    background-color: #ece9e6;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    background-size: cover;
+    background: #fff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #fff, #c9e3ac); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #fff, #c9e3ac); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 
@@ -22,7 +17,7 @@
 }
 
 .container_filters{
-    margin-left: 180px;
+    margin-left: 145px;
 }
 
 .container_filters h3{
@@ -58,7 +53,7 @@
     padding: 10px;
         background-color: white;
         border: none;
-        width: 50%;
+        width: 100%;
         max-width: 115px;
         border-radius: 5px;
         margin-left: 10px;
@@ -83,4 +78,8 @@
     color: black;
     display: contents;
     font-size: small;
+}
+
+.imagen {
+    margin-left: 580px;
 }

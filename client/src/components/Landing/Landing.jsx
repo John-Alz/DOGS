@@ -7,7 +7,7 @@ export default function Landing() {
   <div className={styles.card}>
     <div className={styles.container}>
       <div className={styles.menu}>
-        <h3>Pi dogs.</h3>
+        <h3>PI dogs.</h3>
       </div>
       <div className={styles.content}>
         <div className={styles.text}>

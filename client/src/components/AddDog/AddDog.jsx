@@ -27,7 +27,7 @@ function valdate(input){
   }
   else if(!input.image){
     errors.image = "Se requiere una imagen"
-  }
+  } 
   return errors;
 }
 
@@ -37,6 +37,7 @@ export default function AddDog() {
   const allTemperaments = useSelector(state => state.temperaments)
 
   const [errors, setErrors] = useState({});
+  
 
   const [input, setInput] = useState ({
     name: '',
@@ -72,6 +73,7 @@ export default function AddDog() {
     e.preventDefault();
     console.log(input);
     dispatch(postDog(input))
+    alert('Perro creado!!')
 
     setInput({
       name: '',
@@ -85,13 +87,13 @@ export default function AddDog() {
     })
   }
 
-  function onClickSubmit (){
-    if(!input.name || !input.min_height || !input.max_height || !input.min_weight || !input.max_weight || !input.life_span || !input.image || !input.temperaments){
-      alert('Debes completar cada uno de los campos')
-    }else {
-      alert('Perro creado!!')
-    }
-  } 
+  // function onClickSubmit (){
+  //   if(!input.name || !input.min_height || !input.max_height || !input.min_weight || !input.max_weight || !input.life_span || !input.image || !input.temperaments){
+  //     alert('Debes completar cada uno de los campos')
+  //   }else {
+  //     alert('Perro creado!!')
+  //   }
+  // } 
 
   function handleDelete(el){
     setInput({
@@ -110,7 +112,7 @@ export default function AddDog() {
       <Link className={styles.LinkAdd} to='/dogs'>X</Link>
       <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/38816/image-from-rawpixel-id-542207-jpeg.png' alt='img'/>
       <form  onSubmit={handleSubmit}>
-        <h1>Crea tu perro</h1>
+        <h1>Crea tu perro!!  🐶🦴</h1> 
   {/* ----------------------------------------------------- */}
         <div>
           <input 
@@ -120,6 +122,7 @@ export default function AddDog() {
           placeholder='Nombre'
           onChange={handleChange}
           />
+          <br />
           {
             errors.name && (
               <small className={styles.error}>{errors.name}</small>
@@ -136,9 +139,10 @@ export default function AddDog() {
           placeholder='Min height'
           onChange={handleChange}
           />
+          <br />
           {
             errors.min_height && (
-              <small className='error'>{errors.min_height}</small>
+              <small className={styles.error}>{errors.min_height}</small>
             )
           }
         </div>
@@ -152,9 +156,10 @@ export default function AddDog() {
           placeholder='Max height'
           onChange={handleChange}
           />
+          <br />
           {
             errors.max_height && (
-              <small className='error'>{errors.max_height}</small>
+              <small className={styles.error}>{errors.max_height}</small>
             )
           }
         </div>
@@ -168,9 +173,10 @@ export default function AddDog() {
           placeholder='Min weight'
           onChange={handleChange}
           />
+          <br />
           {
             errors.min_weight && (
-              <small className='error'>{errors.min_weight}</small>
+              <small className={styles.error}>{errors.min_weight}</small>
             )
           }
         </div>
@@ -184,9 +190,10 @@ export default function AddDog() {
           placeholder='Max weight'
           onChange={handleChange}
           />
+          <br />
           {
             errors.max_weight && (
-              <small className='error'>{errors.max_weight}</small>
+              <small className={styles.error}>{errors.max_weight}</small>
             )
           }
         </div>
@@ -200,9 +207,10 @@ export default function AddDog() {
           placeholder='Life span'
           onChange={handleChange}
           />
+          <br />
           {
             errors.life_span && (
-              <small className='error'>{errors.life_span}</small>
+              <small className={styles.error}>{errors.life_span}</small>
             )
           }
         </div>
@@ -215,16 +223,17 @@ export default function AddDog() {
           placeholder='Image URL'
           onChange={handleChange}
           />
+          <br />
           {
             errors.image && (
-              <small className='error'>{errors.image}</small>
+              <small className={styles.error}>{errors.image}</small>
             )
           }
         </div>
   {/* ----------------------------------------------------- */}
         <div>
           <select onChange={handleSelect}>
-          <option disabled selected>Selecciona temperamnetos</option>
+          <option disabled selected>Selecciona temperamentos</option>
             {allTemperaments.map((temp) => (
               <option value={temp.name} >{temp.name}</option>
             ))}
@@ -232,7 +241,11 @@ export default function AddDog() {
           {/* <ul><li>{input.temperaments.map(el => el + " ,")}</li></ul> */}
         </div>
   {/* ----------------------------------------------------- */}
-        <button type='submit' onClick={onClickSubmit} >Crear Dog</button>
+        <button type='submit' disabled={
+        errors.name || errors.min_height || errors.max_height
+        || errors.min_weight || errors.max_weight || errors.life_span
+        || errors.image
+          ? true : false}>Crear Dog</button>
       </form>
       {
         input.temperaments.map(el =>

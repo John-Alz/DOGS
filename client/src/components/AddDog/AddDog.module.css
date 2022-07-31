@@ -38,7 +38,7 @@
 }
 
 .container input{
-    width: 120%;
+    width: 490px;
     border: none;
     padding: 2px;
     border-radius: 3px;
@@ -96,3 +96,7 @@
     cursor: pointer;
 }
 
+.error{
+    color: #656880;
+    width: 10px;
+}
