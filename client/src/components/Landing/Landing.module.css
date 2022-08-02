@@ -81,9 +81,10 @@ html, body {
   border: 2px solid #3da35d;
 }
 
-.text a:hover, .text a:active {
+.text a:hover {
   background-color: white;
   color: #3da35d;
+  
 }
 
 .photo {

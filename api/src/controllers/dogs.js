@@ -15,6 +15,7 @@ async function getAllPerros(req, res) {
     }
 }
 
+
 async function getDogId(req, res) {
     const { idRaza } = req.params
     const allDogs = await getAllDogs()
@@ -69,4 +70,4 @@ async function newDog(req, res, next) {
     }
 }
 
-module.exports = { getAllPerros, getDogId, newDog }
+module.exports = { getAllPerros, getDogId, newDog}

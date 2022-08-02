@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useParams } from 'react-router-dom';
-import { getDetail } from '../../actions/actions';
+import { clearDetail, getDetail } from '../../actions/actions';
 import styles from './DogDetail.module.css'
 
 export default function DogId({props}) {
@@ -12,6 +12,7 @@ export default function DogId({props}) {
 
     useEffect(() => {
         dispatch(getDetail(id))
+        dispatch(clearDetail())
     }, [dispatch, id])
 
     const dogDetail = useSelector((state) => state.detail)
@@ -26,13 +27,13 @@ export default function DogId({props}) {
       weightDog = dogDetail[0].weight;
       lifeSpanDog = dogDetail[0].life_span;
 
-      if(!dogDetail[0].createdInDb) {
-        temperamentDog = dogDetail[0].temperament
-      }
+      if (dogDetail[0].temperaments[0]) {
+        temperamentDog = [...dogDetail[0].temperaments]
+    }
 
-      if(dogDetail[0].createdInDb) {
-        temperamentDog = dogDetail[0].temperaments.map(temp =>  temp.name + (', '))
-      }
+    if (dogDetail[0].temperaments[0].name) {
+        temperamentDog = dogDetail[0].temperaments.map(temp => temp.name + (", "))
+    }
     }
 
 
@@ -46,9 +47,9 @@ export default function DogId({props}) {
        <div>
         <h1>{nameDog}</h1>
         <h4>Height:</h4>
-        <p>{` ${heightDog} IN`}</p>
+        <p>{`${heightDog && heightDog[0]} - ${heightDog && heightDog[1]} CM`}</p>
         <h4>Weight:</h4>
-        <p>{`${weightDog} Pounds`}</p>
+        <p>{`${weightDog &&  weightDog[0]} - ${weightDog && weightDog[1]} KG`}</p>
         <h4>Life span:</h4>
         <p>{lifeSpanDog}</p>
         <h4>Temperaments:</h4>

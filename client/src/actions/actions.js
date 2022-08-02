@@ -48,6 +48,16 @@ export function getDetail(id){
     }
 }
 
+//clear detail
+
+export function clearDetail() {
+    return {
+        type: CASES.CLEAR_DETAIL
+    }
+}
+
+/* ------------------------------------------- */
+
 export function getTemp(){
     return async function(dispatch) {
         try {

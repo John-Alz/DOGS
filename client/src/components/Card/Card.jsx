@@ -8,7 +8,7 @@ export default function Card(props) {
                 <h3>{props.name}</h3>
                 <h4>Temperaments:</h4>
                 <p>{props.temperament}</p>
-                <h4>Weight: {props.weight} Pounds</h4>
+                <h4>Weight: {props.weight} KG</h4>
         </div>
     )
 }

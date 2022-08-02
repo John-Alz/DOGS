@@ -26,6 +26,11 @@ export default function rootReducer(state = initialState, action) {
                 ...state,
                 detail: action.payload,
             }
+        case CASES.CLEAR_DETAIL:
+            return{
+                ...state,
+                detail: []
+            }
         case CASES.GET_TEMPERAMENT:
             return {
                 ...state,
@@ -63,8 +68,8 @@ export default function rootReducer(state = initialState, action) {
             const otra = [...state.allDogsCp]
             const tempFilter = action.payload === 'All' ? otra : 
             otra.filter(dog => {
-                if(!dog.temperament) return undefined;
-                return dog.temperament.includes(action.payload)
+                if(!dog.temperaments) return undefined;
+                return dog.temperaments.includes(action.payload)
             })
             return{
                 ...state,

@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Paginado from "../Paginado/Paginado";
 import styles from './Home.module.css'
 import Footer from "../Footer/Footer";
+import NavBar from "../NavBar/NavBar";
 
 
 export default function Home() {
@@ -52,6 +53,7 @@ export default function Home() {
 
     return (
         <>
+        <NavBar/>
         <div className={styles.bodyPage}>
         <div className={styles.encabezado}>
             <div>
@@ -105,12 +107,15 @@ export default function Home() {
                     key={dog.id}
                     image={dog.image}
                     name={dog.name}
-                    temperament={Array.isArray(dog.temperaments) ? dog.temperaments.map(dog => dog.name + (', ')) : dog.temperament}
+                    temperament={Array.isArray(dog.temperaments) ? dog.temperaments.map(dog => dog.name + (', ')) : dog.temperaments}
+                    /*
+                    temperament={dog.temperaments[0].name ? dog.temperaments.map(el => el.name) : dog.temperament}
+                    */
                     // dog.temperament
                     /* dog.temperaments[0].name ? dog.temperaments.map(dog => dog.name) : dog.temperament */
-                    weight={dog.weight}
+                    weight={dog.weight[0] + " - " + dog.weight[1]} 
                     />
-                    </Link>
+                    </Link> 
                 )
             ) : <div className={styles.imagen}>
                 <img src="https://sezeromer.com/wp-content/uploads/2019/09/Infinity-1s-200px.gif" alt="img" />

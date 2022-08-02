@@ -5,15 +5,17 @@ import styles from './SearchBar.module.css'
 
 export default function SearchBar() {
 
-    const [input, setInput] = useState("");
+    const [dogs, setDogs] = useState("");
     const dispatch = useDispatch()
 
     const inputHandler = (e) => {
-        setInput(e.target.value);
+        setDogs(e.target.value);
     }
 
-    const onClickHandler = () => {
-        dispatch(getByName(input))
+    const onClickHandler = (e) => {
+        e.preventDefault();
+            dispatch(getByName(dogs));
+            setDogs("");
     }
 
     const homeHandler = () => {
@@ -22,7 +24,7 @@ export default function SearchBar() {
 
   return (
     <div className={styles.searchBar}>
-        <button className={styles.button1} onClick={() => onClickHandler()}>Search</button>
+        <button className={styles.button1} onClick={(e) => onClickHandler(e)} >Search</button>
         <input
             className={styles.inputSearch}
             type="text"

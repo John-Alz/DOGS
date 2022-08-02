@@ -217,7 +217,7 @@ export default function AddDog() {
   {/* ----------------------------------------------------- */}
         <div>
           <input 
-          type="text"
+          type="url"
           value={input.image}
           name='image'
           placeholder='Image URL'
