@@ -34,12 +34,14 @@ export default function Home() {
 
     function handleCreated(e) {
         dispatch(filterByCreado(e.target.value))
+        setPagina(1)
     }
 
     function orderNameHandler(e) {
         e.preventDefault();
         dispatch(orderByName(e.target.value));
         setOrden(`Ordenado ${e.target.value}`);
+        setPagina(1)
         console.log(orden);
     }
 
@@ -47,6 +49,7 @@ export default function Home() {
         e.preventDefault();
         dispatch(orderByWeight(e.target.value));
         setOrden(`Ordenado ${e.target.value}`)
+        setPagina(1)
         console.log(orden);
     }
 

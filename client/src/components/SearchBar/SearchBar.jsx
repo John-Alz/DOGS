@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { getByName, getDogs } from '../../actions/actions';
 import styles from './SearchBar.module.css'
 
+
 export default function SearchBar() {
 
     const [dogs, setDogs] = useState("");
@@ -14,8 +15,12 @@ export default function SearchBar() {
 
     const onClickHandler = (e) => {
         e.preventDefault();
+        if(dogs){
             dispatch(getByName(dogs));
             setDogs("");
+        } else {
+            alert("No existe un perro con ese nombre")
+        }
     }
 
     const homeHandler = () => {

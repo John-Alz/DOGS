@@ -7,27 +7,35 @@ import styles from './AddDog.module.css'
 
 function valdate(input){
   let errors ={}
-  if(!input.name) {
+  if(!input.name ) {
     errors.name = "Se requiere incluir un nombre"
-  }
+  } 
   else if(!input.min_height){
     errors.min_height = "Se requiere incluir altura minima"
-  }
+  } else if(!(input.min_height < input.max_height)){
+    errors.min_height = "Se requiere que altura minima sea < a altura maxima"
+  } 
   else if(!input.max_height) {
     errors.max_height = 'Se requiere incluir altura maxima'
+  } else if(!(input.max_height > input.min_height)){
+    errors.min_height = "Se requiere que altura maxima sea > a altura minima"
   }
   else if(!input.min_weight) {
     errors.min_weight = "Se requiere incluir peso minimo"
+  } else if(!(input.min_weight < input.max_weight)){
+    errors.min_weight = "Se requiere que peso minimo sea < a peso maximo"
   }
   else if(!input.max_weight) {
     errors.max_weight = 'Se requiere incluir peso maximo'
+  } else if(!(input.max_weight > input.min_weight)){
+    errors.max_weight = "Se requiere que altura maxima sea > a altura minima"
   }
   else if(!input.life_span) {
     errors.life_span = "Se requiere incluir esperanza de vida"
   }
   else if(!input.image){
     errors.image = "Se requiere una imagen"
-  } 
+  }
   return errors;
 }
 
@@ -87,14 +95,6 @@ export default function AddDog() {
     })
   }
 
-  // function onClickSubmit (){
-  //   if(!input.name || !input.min_height || !input.max_height || !input.min_weight || !input.max_weight || !input.life_span || !input.image || !input.temperaments){
-  //     alert('Debes completar cada uno de los campos')
-  //   }else {
-  //     alert('Perro creado!!')
-  //   }
-  // } 
-
   function handleDelete(el){
     setInput({
       ...input,
@@ -117,6 +117,7 @@ export default function AddDog() {
         <div>
           <input 
           type="text" 
+          required="required"
           value={input.name}
           name='name'
           placeholder='Nombre'
@@ -133,6 +134,7 @@ export default function AddDog() {
         <div>
           <input 
           type="number"
+          required="required"
           min='1'
           value={input.min_height}
           name='min_height'
@@ -150,6 +152,7 @@ export default function AddDog() {
         <div>
           <input 
           type="number"
+          required="required"
           min='1'
           value={input.max_height}
           name='max_height'
@@ -167,6 +170,7 @@ export default function AddDog() {
         <div>
           <input 
           type="number"
+          required="required"
           min='1'
           value={input.min_weight}
           name='min_weight'
@@ -184,6 +188,7 @@ export default function AddDog() {
         <div>
           <input 
           type="number"
+          required="required"
           min='1'
           value={input.max_weight}
           name='max_weight'
@@ -201,6 +206,7 @@ export default function AddDog() {
         <div>
           <input 
           type="number"
+          required="required"
           min='1'
           value={input.life_span}
           name='life_span'
@@ -218,6 +224,7 @@ export default function AddDog() {
         <div>
           <input 
           type="url"
+          required="required"
           value={input.image}
           name='image'
           placeholder='Image URL'
@@ -232,8 +239,8 @@ export default function AddDog() {
         </div>
   {/* ----------------------------------------------------- */}
         <div>
-          <select onChange={handleSelect}>
-          <option disabled selected>Selecciona temperamentos</option>
+          <select required onChange={handleSelect} >
+          <option  disabled selected>Selecciona temperamentos</option>
             {allTemperaments.map((temp) => (
               <option value={temp.name} >{temp.name}</option>
             ))}
