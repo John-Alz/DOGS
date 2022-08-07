@@ -1,7 +1,7 @@
 .bodyPage{
-    background: #fff; 
-    background: -webkit-linear-gradient(to bottom, #fff, #c9e3ac); 
-    background: linear-gradient(to bottom, #fff, #c9e3ac); 
+    background: #fff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #cccccc, #fff); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #cccccc, #fff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 
@@ -9,11 +9,62 @@
 .encabezado{
     display: flex;
     text-align: justify;
-    background-image: url("../../images/bienvenida5.jpg");
+    background-image: url("../../images/fondo2.jpg");
     background-size: cover;
     height: 350px;
-    width: 78%;
+    width: 79.5%;
     margin-left: 135px;
+}
+
+.encabezado .presentacion div{
+    height: 50%;
+    width: 100%;
+}
+
+.encabezado .presentacion div h1{
+    font-size: 48px;
+    margin-top: 40px;
+    margin-left: 20px;
+    color: white;
+}
+
+.encabezado .presentacion div p{
+    margin-top: -25px;
+    font-size: 14px;
+    color: rgb(196, 196, 196);
+    margin-bottom: 15px;
+    margin-left: 20px;
+}
+
+.encabezado .Container__Imagenes{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding-bottom: 5px;
+    margin-left: 500px;
+}
+
+.encabezado .Container__Imagenes .Titulo__Imagenes{
+    text-align: center;
+    color: white;
+    padding: 5px 0px 5px 0px;
+}
+
+.encabezado .Container__Imagenes .Imagenes{
+    height: 20%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.encabezado .Container__Imagenes .Imagenes img{
+    height: 32px;
+    width: 32px;
+    background-color: white;
+    border: 1px solid white;
+    margin: 5px 7px 5px 7px;
+    border-radius: 5px;
 }
 
 .container_filters{
@@ -81,5 +132,13 @@
 }
 
 .imagen {
-    margin-left: 580px;
+    margin-left: 420px;
+}
+
+.contenedor{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-items: center;
+    width: 85%;
+    margin-left: 100px;
 }

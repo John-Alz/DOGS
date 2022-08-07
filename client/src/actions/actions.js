@@ -20,6 +20,7 @@ export function getDogs(){
 }
 
 
+
 export function getByName(name){
     return async function(dispatch) {
         try {

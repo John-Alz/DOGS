@@ -31,7 +31,8 @@ const getDataApi = async () => {
             weight: weightArray,
             temperaments: temperamentArray,
             life_span: elemento.life_span,
-            image: elemento.image.url
+            image: elemento.image.url,
+            origin: elemento.origin
         }
     })
     return dataApi

@@ -1,5 +1,7 @@
 .bodyDog {
-  background-image: url('../../images/Ver\ Black.jpg');
+  background: #fff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #cccccc, #fff); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #cccccc, #fff);
   display: grid;
   place-items: center;
   min-height: 100vh;
@@ -9,7 +11,7 @@
 
 
 .dogdetail{
-  background-color: white;
+  background-color: black;
   width: 1000px;
   height: 450px;
   position: relative;
@@ -20,6 +22,9 @@
   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.185);
 }
 
+.dogdetail h1, h4, p{
+  color: #fff;
+}
 
 .dogdetail img {
   /* width: 250px;
@@ -40,14 +45,19 @@
     position: absolute;
     top: -15px;
     right: -15px;
-    background-color: white;
+    background-color: black;
     width: 45px;
     height: 45px;
     display: grid;
     place-items: center;
     font-size: 1.7rem;
-    color: #2E4052;
+    color: #fff;
     border-radius: 50%;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.164);
     cursor: pointer;
+}
+
+.linkDet:hover{
+  background-color: #fff;
+  color: black;
 }

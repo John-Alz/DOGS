@@ -9,25 +9,25 @@
 
 .inputSearch{
   padding: 6.5px;
-  border: .5px solid #ced4da;
-  background-color: #fbfefb;
+  border: .5px solid #000000;
+  background-color: #fff;
 }
 
 
 .button1 {
-  color: black;
+  color: white;
   text-decoration: none;
-  background-color: #e9ecef;
+  background-color: black;
   transition: background-color 0.2s;
   transition: color 0.2s;
   padding: 6.5px;
-  border: .5px solid #e9ecef;
+  border: .5px solid black;
   cursor: pointer;
   }
 
   .button1:hover, .button1:active {
     background-color: white;
-  color: #a6d3a0;
+  color: black;
   }
 
   .button2 {

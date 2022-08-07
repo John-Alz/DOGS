@@ -1,5 +1,5 @@
 .NavbarContainer{
-    width: 100%;
+    width: 0%;
     margin: auto;
     display: flex;
     flex-direction: row;
@@ -34,7 +34,7 @@
 
 
 .Navbar__Lista{
-    width: 40%;
+    width: 60%;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -55,6 +55,23 @@
     color: black;
     font-size: 14px;
 }
+
+.boton{
+    color: black;
+  text-decoration: none;
+  background-color: #fff;
+  transition: background-color 0.2s;
+  transition: color 0.2s;
+  padding: 6.5px;
+  border: none;
+  cursor: pointer;
+  border: .05px solid black;
+}
+
+.boton:hover {
+    background-color: #000000;
+  color: #fff;
+  }
 
 .Active{
     border-bottom: 2px solid black;

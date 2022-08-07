@@ -7,6 +7,8 @@ import Paginado from "../Paginado/Paginado";
 import styles from './Home.module.css'
 import Footer from "../Footer/Footer";
 import NavBar from "../NavBar/NavBar";
+import Github from '../../images/github.png'
+import Linkedin from '../../images/linkedin.png'
 
 
 export default function Home() {
@@ -16,7 +18,7 @@ export default function Home() {
     const dispatch = useDispatch()
 
     const [pagina, setPagina] = useState(1)
-    const [porPagina] = useState(8)
+    const [porPagina] = useState(9)
 
     const maximo = (estadoDogs.length / porPagina)
 
@@ -59,29 +61,40 @@ export default function Home() {
         <NavBar/>
         <div className={styles.bodyPage}>
         <div className={styles.encabezado}>
-            <div>
-                {/* <h1>PI dogs soy henry</h1>
+            <div className={styles.presentacion}>
+                <div>
+                    <h1>PI dogs soy henry</h1>
                 <p>
                     Proyecto desarrolado en el bootcamp de soy henry
-                </p> */}
+                </p>
+                </div>
+            </div>
+            <div className={styles.Container__Imagenes}>
+                        <div className={styles.Titulo__Imagenes}>
+                            <span>Mis redes</span>
+                        </div>
+                        <div className={styles.Imagenes}>
+                            <img src={Github} alt='img' />
+                            <img src={Linkedin} alt='img'/>
+                        </div>
             </div>
         </div>
         <div className={styles.container_filters}>
-        <h3>🐶-Filters-🦴</h3> 
+        <h3>Filters Dogs</h3> 
         <select className={styles.Filter_name} onChange={e => orderNameHandler(e)}>
                 <option value="asc">Ascending</option>
                 <option value="desc">Descending</option>
             </select>
         {/* ----------------------------------------------------- */}
             <select className={styles.Filter_creado} onChange={e => handleCreated(e)}>
-                <option value="All">Todos</option>
+                <option value="All">All dogs</option>
                 <option value="api">Existente</option>
                 <option value="created">Creados</option>
             </select>
         {/* ----------------------------------------------------- */}
             <select className={styles.Filter_weight} onChange={e => orderWeightHandler(e)}>
             <option disabled selected defaultValue>
-                Filter by weight
+                Filter weight
             </option>
             <option value="max_weight">Max</option>
             <option value="min_weight">Min</option>
@@ -98,7 +111,7 @@ export default function Home() {
             </div>
             
         {/* ----------------------------------------------------- */}
-        <div>
+        <div className={styles.contenedor}>
             {estadoDogs.length > 0 ? estadoDogs
             .slice(
                 (pagina - 1) * porPagina,
@@ -121,7 +134,7 @@ export default function Home() {
                     </Link> 
                 )
             ) : <div className={styles.imagen}>
-                <img src="https://sezeromer.com/wp-content/uploads/2019/09/Infinity-1s-200px.gif" alt="img" />
+                <img src="https://i.gifer.com/JVX7.gif" alt="img" />
             </div> 
             }
         </div>

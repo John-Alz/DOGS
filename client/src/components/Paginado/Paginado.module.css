@@ -1,13 +1,16 @@
 .container_pag {
     margin-top: 25px;
     width: 320px;
-    margin: 10px 30px 10px 490px;
+    margin: 10px 30px 10px 500px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 15px;
-    background-color: #b0bea9;
+    background-color: #0b090a;
     border-radius: 5px;
+}
+.container_pag h5{
+    color: #fff;
 }
 
 .button {

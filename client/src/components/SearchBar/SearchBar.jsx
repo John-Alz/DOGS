@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
-import { getByName, getDogs } from '../../actions/actions';
+import { getByName } from '../../actions/actions';
 import styles from './SearchBar.module.css'
 
 
@@ -15,17 +15,17 @@ export default function SearchBar() {
 
     const onClickHandler = (e) => {
         e.preventDefault();
+        setDogs(" ");
         if(dogs){
             dispatch(getByName(dogs));
-            setDogs("");
         } else {
             alert("No existe un perro con ese nombre")
         }
     }
 
-    const homeHandler = () => {
-        dispatch(getDogs())
-    }
+    // const homeHandler = () => {
+    //     dispatch(getDogs())
+    // }
 
   return (
     <div className={styles.searchBar}>
@@ -39,9 +39,10 @@ export default function SearchBar() {
             onChange={(e) => inputHandler(e)}
         />
     <div>
-        <button className={styles.button2} onClick={() => homeHandler()}>Reset</button>
-        
+        {/* <button className={styles.button2} onClick={() => homeHandler()}>Reset</button> */}
     </div>
     </div>
   )
 }
+
+

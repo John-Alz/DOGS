@@ -1,6 +1,8 @@
 
 .body {
-    background-image: url('../../images/Margo.jpg');
+    background: #fff; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #cccccc, #fff); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #cccccc, #fff);
     display: grid;
     place-items: center;
     min-height: 100vh;
@@ -29,7 +31,6 @@
     margin-left: 110px;
     object-fit: cover;
     object-position: center;
-    filter: sepia(100%);
     width: 85%;
 }
 
@@ -42,7 +43,7 @@
     border: none;
     padding: 2px;
     border-radius: 3px;
-    border: 2px solid #DADDEC;
+    border: 2px solid #353535;
     margin: 5px 0 10px;
     font-size: 1rem;
     color: #656880;
@@ -53,7 +54,7 @@
     border: none;
     padding: 2px;
     border-radius: 3px;
-    border: 2px solid #DADDEC;
+    border: 2px solid #353535;
     margin: 5px 0 10px;
     font-size: 1rem;
     color: #656880;
@@ -64,7 +65,7 @@
       border: none;
       padding: 2px;
       border-radius: 3px;
-      background-image: linear-gradient(to right, #adb5bd, #6c757d);
+      background-image: linear-gradient(to right, #333533, #000000);
       display: block;
       color: white;
       font-size: 1rem;
@@ -84,17 +85,23 @@
     position: absolute;
     top: -15px;
     right: -15px;
-    background-color: white;
+    background-color: black;
     width: 45px;
     height: 45px;
     display: grid;
     place-items: center;
     font-size: 1.7rem;
-    color: #2E4052;
+    color: #fff;
     border-radius: 50%;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.164);
     cursor: pointer;
 }
+
+.LinkAdd:hover{
+    background-color: #fff;
+    color: #000000;
+    border: 1px solid #000000;
+  }
 
 .error{
     color: #656880;

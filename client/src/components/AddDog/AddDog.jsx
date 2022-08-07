@@ -5,11 +5,13 @@ import { getTemp, postDog } from '../../actions/actions';
 import styles from './AddDog.module.css'
 
 
-function valdate(input){
+function valdate(input, select){
   let errors ={}
   if(!input.name ) {
     errors.name = "Se requiere incluir un nombre"
-  } 
+  } else if (!/^[a-zA-Z ]+$/.test(input.name)){
+    errors.name = "solo deben ir letras"
+  }
   else if(!input.min_height){
     errors.min_height = "Se requiere incluir altura minima"
   } else if(!(input.min_height < input.max_height)){
@@ -35,6 +37,8 @@ function valdate(input){
   }
   else if(!input.image){
     errors.image = "Se requiere una imagen"
+  } else if(!select.temperaments) {
+    errors.temperaments ="Se requiere un temp"
   }
   return errors;
 }
@@ -110,9 +114,9 @@ export default function AddDog() {
     <div className={styles.body}>
     <div className={styles.container}>
       <Link className={styles.LinkAdd} to='/dogs'>X</Link>
-      <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/38816/image-from-rawpixel-id-542207-jpeg.png' alt='img'/>
+      <img src='https://i.blogs.es/808765/dpoty-puppy-2nd--c--tracy-kirby-the-kennel-club-2/450_1000.jpg' alt='img'/>
       <form  onSubmit={handleSubmit}>
-        <h1>Crea tu perro!!  🐶🦴</h1> 
+        <h1>Crea tu perro!!  🦴</h1> 
   {/* ----------------------------------------------------- */}
         <div>
           <input 
@@ -239,12 +243,17 @@ export default function AddDog() {
         </div>
   {/* ----------------------------------------------------- */}
         <div>
-          <select required onChange={handleSelect} >
+          <select required="required" onChange={handleSelect} >
           <option  disabled selected>Selecciona temperamentos</option>
             {allTemperaments.map((temp) => (
               <option value={temp.name} >{temp.name}</option>
             ))}
           </select>
+          {
+            errors.temperaments && (
+              <small className={styles.error}>{errors.temperaments}</small>
+            )
+          }
           {/* <ul><li>{input.temperaments.map(el => el + " ,")}</li></ul> */}
         </div>
   {/* ----------------------------------------------------- */}
