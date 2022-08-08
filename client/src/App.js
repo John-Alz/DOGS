@@ -1,4 +1,5 @@
 import { Route, Switch } from "react-router-dom";
+import AboutMe from "./components/AboutMe/AboutMe";
 import AddDog from "./components/AddDog/AddDog";
 import DogId from "./components/DogDetail/DogDetail";
 import Home from "./components/Home/Home";
@@ -13,6 +14,7 @@ function App() {
       <Route exact path="/" component={Landing}/>
       <Route exact path="/dogs" component={Home} />
       <Route exact path="/detail/:id" component={DogId} />
+      <Route exact path="/aboutme" component={AboutMe} />
       <Route exact path="/addDog" component={AddDog} />
       <Route exact path="*" component={NotFound} />
       </Switch>

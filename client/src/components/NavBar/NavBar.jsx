@@ -1,7 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import SearchBar from '../SearchBar/SearchBar'
-import Logo from '../../images/dog.png'
 import styles from './NavBar.module.css'
 import { useDispatch } from 'react-redux'
 import { getDogs } from '../../actions/actions'
@@ -40,7 +39,7 @@ export default function NavBar() {
                             <span>CREATE DOG</span>
                         </li>
                     </NavLink>
-                    <NavLink to="/addDog" activeClassName={styles.Active}>
+                    <NavLink to="/aboutme" activeClassName={styles.Active}>
                         <li>
                             <span>ABOUT ME</span>
                         </li>

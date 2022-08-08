@@ -5,7 +5,7 @@ import { getTemp, postDog } from '../../actions/actions';
 import styles from './AddDog.module.css'
 
 
-function valdate(input, select){
+function valdate(input){
   let errors ={}
   if(!input.name ) {
     errors.name = "Se requiere incluir un nombre"
@@ -37,8 +37,6 @@ function valdate(input, select){
   }
   else if(!input.image){
     errors.image = "Se requiere una imagen"
-  } else if(!select.temperaments) {
-    errors.temperaments ="Se requiere un temp"
   }
   return errors;
 }
@@ -249,11 +247,6 @@ export default function AddDog() {
               <option value={temp.name} >{temp.name}</option>
             ))}
           </select>
-          {
-            errors.temperaments && (
-              <small className={styles.error}>{errors.temperaments}</small>
-            )
-          }
           {/* <ul><li>{input.temperaments.map(el => el + " ,")}</li></ul> */}
         </div>
   {/* ----------------------------------------------------- */}

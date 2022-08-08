@@ -19,7 +19,7 @@
   grid-template-columns: 1fr 1fr;
   place-items: center;
   line-height: 1.5;
-  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.185);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.400);
 }
 
 .dogdetail h1, h4, p{
@@ -55,6 +55,7 @@
     border-radius: 50%;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.164);
     cursor: pointer;
+    border: 1px solid #000000;
 }
 
 .linkDet:hover{
