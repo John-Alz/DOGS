@@ -63,9 +63,9 @@
 }
 
 .boton{
-    color: black;
+    color: #fff;
   text-decoration: none;
-  background-color: #fff;
+  background-color: #000000;
   transition: background-color 0.2s;
   transition: color 0.2s;
   padding: 6.5px;
@@ -75,7 +75,7 @@
 }
 
 .boton:hover {
-    background-color: #000000;
+    background-color: #46494c;
   color: #fff;
   }
 

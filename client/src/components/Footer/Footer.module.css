@@ -1,13 +1,29 @@
 .footer_container {
-    padding-top: 40px;
+    padding: 10px 50px 30px 50px;
     height: auto;
     border: 1px solid black;
     margin-top: 20px;
     background-color: black;
 }
 
+.conatiner_left{
+    width: 50%;
+    color: #fff;
+}
+
 .footer_container h3 {
-    text-align: center;
-    color: white;
-    margin-right: 30px;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 5px;
+}
+.footer_container p {
+    color: #8f9296;
+    font-size: 16px;
+    padding: 5px;
+}
+
+.footer_container svg{
+    color:#fff;
+    font-size: 25px;
+    margin: 0 5px 5px;
 }

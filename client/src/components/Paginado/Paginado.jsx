@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styles from './Paginado.module.css'
+import { MdArrowForwardIos, MdArrowBackIosNew } from 'react-icons/md'
 
 export default function Paginado({pagina, setPagina, maximo}) {
 
@@ -38,7 +39,7 @@ export default function Paginado({pagina, setPagina, maximo}) {
 
   return (
     <div className={styles.container_pag}>
-        <button className={styles.button} disabled={pagina === 1 || pagina < 1} onClick={previousPage}>Prev</button>
+        <button className={styles.button} disabled={pagina === 1 || pagina < 1} onClick={previousPage}><MdArrowBackIosNew/></button>
         <input 
             className={styles.input}
             onChange={(e) => onChange(e)} 
@@ -47,7 +48,7 @@ export default function Paginado({pagina, setPagina, maximo}) {
             autoComplete='off' 
             value={input} />
         <h5>DE {Math.ceil(maximo)}</h5>
-        <button className={styles.button} disabled={pagina === Math.ceil(maximo) || pagina > Math.ceil(maximo)} onClick={nextPage}>Next</button>
+        <button className={styles.button} disabled={pagina === Math.ceil(maximo) || pagina > Math.ceil(maximo)} onClick={nextPage}><MdArrowForwardIos/></button>
     </div>
   )
 }
